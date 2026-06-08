@@ -230,6 +230,4 @@ ShipAssist/
 | Документ | Назначение |
 |---|---|
 | [`docs/architecture.md`](docs/architecture.md) | Полный поток данных, сравнение ONNX/Torch, config-driven дизайн, граф зависимостей модулей |
-| [`docs/audit_lora_pipeline.md`](docs/audit_lora_pipeline.md) | Аудит LoRA-пайплайна: критические баги, пробелы в оценке, приоритетный план |
 | [`RUNBOOK.md`](RUNBOOK.md) | Пошаговое руководство: окружение → конфиг → benchmark → API → обучение |
-| [`CLAUDE.md`](CLAUDE.md) | Руководство по разработке: каноническая структура, стиль кода, стандарты коммитов |
