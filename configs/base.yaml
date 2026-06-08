@@ -1,0 +1,64 @@
+base:
+  device: "auto"          # auto | cpu | cuda
+
+paths:
+  # All paths are relative to PROJECT_ROOT and resolved to absolute at load time.
+  base_dir: "."
+  artifacts_dir: "artifacts"
+  models_dir: "artifacts/models"
+  onnx_model: "artifacts/models/onnx_model"   # must contain onnx_config.json + *.onnx
+  checkpoints: "artifacts/models"
+  best_model: "artifacts/models/best_model"
+  logs_dir: "logs"
+  dataset_csv: "artifacts/data/dataset.csv"
+
+logging:
+  level: "INFO"
+  max_bytes: 10485760   # 10 MB
+  backup_count: 5
+
+monitor:
+  interval_seconds: 60
+  ram_alert_mb: 2000.0
+
+api:
+  host: "127.0.0.1"
+  port: 8000
+  max_file_size_mb: 5
+  cors_origins:
+    - "http://localhost"
+    - "http://localhost:3000"
+    - "http://localhost:8000"
+  # To allow all origins (development only): ["*"]
+
+# Speaker-disjoint data splits — consumed by scripts/verify_splits.py
+splits:
+  train_groups:
+    - "new user 10"
+    - "new user 11"
+    - "new user 14"
+    - "new user 15"
+  val_groups:
+    - "new user 12"
+  test_groups:
+    - "train user 2"
+    - "drug slova2"
+    - "train user 2 new"
+    - "drug slova2-new"
+    - "train user 4"
+    - "drug slova4"
+    - "new user 13"
+
+# Augmentation — maritime noise surrogate for small dataset
+augmentation:
+  maritime_noise:
+    enabled: true
+    probability: 0.3
+    target_snr_db: 15.0
+
+# Real-time recognizer — audio capture loop parameters
+recognizer:
+  ring_buffer_seconds: 10.0    # Duration of the ring buffer (seconds)
+  blocksize: 2048               # sounddevice InputStream block size (samples)
+  mic_reconnect_delay: 2.0     # Seconds to wait before reconnecting mic on error
+  inference_poll_interval: 0.1  # Seconds between inference loop polls

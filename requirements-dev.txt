@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# ShipAssistant — DEV / RESEARCH dependencies
+# Includes everything from requirements.txt plus tools for training,
+# data generation, evaluation, and visualization.
+# Install with: pip install -r requirements-dev.txt
+# ─────────────────────────────────────────────────────────────────────────────
+-r requirements.txt
+
+# ── Training utilities ────────────────────────────────────────────────────────
+transformers~=4.40.0          # Wav2Vec2, HuggingFace model hub
+peft~=0.11.0                  # LoRA / DoRA adapters
+accelerate~=0.30.0            # Distributed / mixed-precision training
+
+# ── Hyperparameter tuning ─────────────────────────────────────────────────────
+optuna~=4.3.0
+sqlalchemy~=2.0.41            # Optuna RDB storage backend
+alembic~=1.14.1
+mako~=1.3.10
+greenlet~=3.1.1
+msgpack~=1.1.1
+
+# ── Data analysis ────────────────────────────────────────────────────────────
+pandas~=2.0.3
+pytz~=2025.2
+
+# ── Visualization ────────────────────────────────────────────────────────────
+matplotlib~=3.7.5
+pillow~=10.4.0
+contourpy~=1.1.1
+fonttools~=4.57.0
+pyparsing~=3.1.4
+cycler~=0.12.1
+kiwisolver~=1.4.7
+
+# ── Audio augmentation & generation ──────────────────────────────────────────
+audiomentations~=0.41.0
+noisereduce~=3.0.3
+pydub~=0.25.1
+gTTS~=2.5.4
+pyttsx3==2.98                 # Offline TTS (Windows)
+
+# ── ASR comparison baselines ──────────────────────────────────────────────────
+openai-whisper==20240930      # Benchmark baseline only — not used in production
+tiktoken~=0.7.0               # Whisper tokenizer dep
+
+# ── Distance / DTW research ───────────────────────────────────────────────────
+fastdtw~=0.3.4
+dtw~=1.4.0
+
+# ── Dev tooling ───────────────────────────────────────────────────────────────
+pytest~=8.0.0
+pytest-mock~=3.14.0

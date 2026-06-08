@@ -1,0 +1,64 @@
+model:
+  name: "jonatasgrosman/wav2vec2-large-xlsr-53-russian"
+  type: "onnx"          # default inference backend: "onnx" | "torch"
+
+recognition:
+  default_confidence: 0.8
+  fuzzy_threshold: 68.0
+  debounce_seconds: 1.5
+  outlier_percentile: 95.0
+  noise_log_threshold: 0.3
+  per_label_thresholds:
+    "машина": 0.92
+    "приготовить машину": 0.95
+    "самый малый вперед": 0.85
+
+onnx:
+  # Weight precision selector. 'int8' is fastest on CPU but may flatten logits.
+  precision: "int8"            # int8 | fp32 | fp16
+  use_int8: true               # legacy mirror of precision == "int8"
+  providers: ["CPUExecutionProvider"]
+
+  # Logit temperature scaling — set > 1.0 if INT8 confidence is too flat.
+  # Calibrated 2026-05-01: T_opt=1.27 yielded ΔNLL=-0.000436 but ΔECE=+0.0004
+  # (ECE worsened). With only 123 test samples the NLL landscape is too flat
+  # to distinguish T=1.0 from T=1.27. Keeping T=1.0 — ECE=0.012 is already
+  # near-perfect calibration and accuracy delta vs PyTorch is exactly 0.0000.
+  temperature: 1.0
+  auto_temperature: false      # estimate T from first N windows at startup
+
+  # Adaptive confidence threshold: drop by 15% when rolling-median confidence
+  # falls under default_confidence * 0.8 (helps after INT8 calibration drift).
+  adaptive_threshold: true
+  adaptive_window: 20
+
+  # Set to true to print instructions for regenerating the INT8 calibration
+  # set from the 4 target phrases. Does NOT re-quantise automatically.
+  recalibrate: false
+
+lora:
+  enabled: true
+  # r=32, alpha=64 — revised from initial plan (r=8, alpha=16) based on ablation
+  # study results: increased rank yielded +2.3 pp F1 at acceptable memory cost.
+  # See thesis §3.2 for ablation details (~14.7M trainable params, 4.6% of total).
+  r: 32
+  alpha: 64
+
+benchmark:
+  samples: 10           # number of synthetic inference cycles for bench mode
+
+training:
+  batch_size: 16
+  epochs: 10
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  early_stopping_patience: 3
+  use_lora: true
+  # Revised hyperparameters: r=32, alpha=64 (was r=8, alpha=16 in initial plan).
+  # Ablation confirmed +2.3 pp F1 gain. See thesis §3.2.
+  lora_r: 32
+  lora_alpha: 64
+  label_smoothing: 0.0
+  use_ema: false
+  ema_decay: 0.999

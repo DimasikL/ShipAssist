@@ -1,0 +1,26 @@
+[
+  {
+    "method": "MFCC + SVM",
+    "f1_clean": 0.5590814063984796,
+    "f1_noisy_12dB": 0.4722213603302715,
+    "latency_ms": 3.321716260227443,
+    "n_samples": 500,
+    "accuracy_clean": 0.5691056910569106
+  },
+  {
+    "method": "Whisper-tiny (zero-shot)",
+    "f1_clean": 0.6311155328939186,
+    "f1_noisy_12dB": 0.42007077856420627,
+    "latency_ms": 416.8624471555032,
+    "n_samples": 500,
+    "accuracy_clean": 0.6178861788617886
+  },
+  {
+    "method": "LoRA-Wav2Vec2 + ONNX INT8",
+    "f1_clean": 0.9843146718146718,
+    "f1_noisy_12dB": null,
+    "latency_ms": 246.58276829338533,
+    "n_samples": 500,
+    "accuracy_clean": 0.983739837398374
+  }
+]

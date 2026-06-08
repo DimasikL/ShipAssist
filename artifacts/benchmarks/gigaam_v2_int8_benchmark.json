@@ -1,0 +1,2482 @@
+{
+  "model_mode": "v2_ctc",
+  "fuzzy_th": 78.0,
+  "backends": [
+    "onnx_int8"
+  ],
+  "latency_onnx_int8": {
+    "avg": 157.9,
+    "std": 33.4,
+    "min": 120.8,
+    "max": 229.7,
+    "P50": 149.7,
+    "P95": 222.0,
+    "P99": 228.3,
+    "n_warmup": 3,
+    "n_bench": 30,
+    "ref_audio": "другие слова x9_0.wav"
+  },
+  "quality_onnx_int8": {
+    "n_samples": 299,
+    "fuzzy_th": 78.0,
+    "accuracy": 0.9498,
+    "macro_f1": 0.9471,
+    "macro_precision": 0.9287,
+    "macro_recall": 0.9698,
+    "mean_latency_ms": 229.8,
+    "p50_latency_ms": 231.9,
+    "p95_latency_ms": 318.7,
+    "labels": [
+      "другие слова",
+      "машина",
+      "приготовить машину",
+      "самый малый вперед"
+    ],
+    "confusion_matrix": [
+      [
+        151,
+        7,
+        4,
+        2
+      ],
+      [
+        0,
+        39,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        46,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        48
+      ]
+    ],
+    "per_class": {
+      "другие слова": {
+        "precision": 0.9869,
+        "recall": 0.9207,
+        "f1": 0.9527,
+        "support": 164
+      },
+      "машина": {
+        "precision": 0.8478,
+        "recall": 1.0,
+        "f1": 0.9176,
+        "support": 39
+      },
+      "приготовить машину": {
+        "precision": 0.92,
+        "recall": 0.9787,
+        "f1": 0.9485,
+        "support": 47
+      },
+      "самый малый вперед": {
+        "precision": 0.96,
+        "recall": 0.9796,
+        "f1": 0.9697,
+        "support": 49
+      }
+    },
+    "per_file": [
+      {
+        "file": "другие слова x9_0.wav",
+        "true_label": "другие слова",
+        "transcription": "дождливая осень",
+        "pred_label": "другие слова",
+        "latency_ms": 105.9,
+        "correct": true
+      },
+      {
+        "file": "другие слова x9_2.wav",
+        "true_label": "другие слова",
+        "transcription": "весел смех",
+        "pred_label": "другие слова",
+        "latency_ms": 106.5,
+        "correct": true
+      },
+      {
+        "file": "другие слова x9_3.wav",
+        "true_label": "другие слова",
+        "transcription": "ледяной дождь",
+        "pred_label": "другие слова",
+        "latency_ms": 123.3,
+        "correct": true
+      },
+      {
+        "file": "другие слова x9_4.wav",
+        "true_label": "другие слова",
+        "transcription": "утренний кофе",
+        "pred_label": "другие слова",
+        "latency_ms": 214.6,
+        "correct": true
+      },
+      {
+        "file": "другие слова x9_5.wav",
+        "true_label": "другие слова",
+        "transcription": "играть",
+        "pred_label": "другие слова",
+        "latency_ms": 128.5,
+        "correct": true
+      },
+      {
+        "file": "другие слова x9_6.wav",
+        "true_label": "другие слова",
+        "transcription": "золотой песок",
+        "pred_label": "другие слова",
+        "latency_ms": 128.5,
+        "correct": true
+      },
+      {
+        "file": "другие слова x9_7.wav",
+        "true_label": "другие слова",
+        "transcription": "большой дом",
+        "pred_label": "другие слова",
+        "latency_ms": 219.4,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_0.wav",
+        "true_label": "другие слова",
+        "transcription": "яркий фонат",
+        "pred_label": "другие слова",
+        "latency_ms": 174.7,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_10.wav",
+        "true_label": "другие слова",
+        "transcription": "утренний туман",
+        "pred_label": "другие слова",
+        "latency_ms": 172.7,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_11.wav",
+        "true_label": "другие слова",
+        "transcription": "кабен",
+        "pred_label": "другие слова",
+        "latency_ms": 156.7,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_12.wav",
+        "true_label": "другие слова",
+        "transcription": "быстробег",
+        "pred_label": "другие слова",
+        "latency_ms": 200.6,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_14.wav",
+        "true_label": "другие слова",
+        "transcription": "морозный воздух",
+        "pred_label": "другие слова",
+        "latency_ms": 148.7,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_15.wav",
+        "true_label": "другие слова",
+        "transcription": "вечный путь",
+        "pred_label": "другие слова",
+        "latency_ms": 127.6,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_16.wav",
+        "true_label": "другие слова",
+        "transcription": "тихая песня",
+        "pred_label": "другие слова",
+        "latency_ms": 153.6,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_17.wav",
+        "true_label": "другие слова",
+        "transcription": "жар тепол",
+        "pred_label": "другие слова",
+        "latency_ms": 117.9,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_2.wav",
+        "true_label": "другие слова",
+        "transcription": "радужный мозг",
+        "pred_label": "другие слова",
+        "latency_ms": 137.7,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_3.wav",
+        "true_label": "другие слова",
+        "transcription": "черная кошка",
+        "pred_label": "другие слова",
+        "latency_ms": 274.6,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_4.wav",
+        "true_label": "другие слова",
+        "transcription": "рыжая кошка",
+        "pred_label": "другие слова",
+        "latency_ms": 154.9,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_5.wav",
+        "true_label": "другие слова",
+        "transcription": "ледяная скала",
+        "pred_label": "другие слова",
+        "latency_ms": 189.2,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_7.wav",
+        "true_label": "другие слова",
+        "transcription": "широкая",
+        "pred_label": "другие слова",
+        "latency_ms": 136.3,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_8.wav",
+        "true_label": "другие слова",
+        "transcription": "короткий",
+        "pred_label": "другие слова",
+        "latency_ms": 135.3,
+        "correct": true
+      },
+      {
+        "file": "другие слова x18_9.wav",
+        "true_label": "другие слова",
+        "transcription": "зимний лес",
+        "pred_label": "другие слова",
+        "latency_ms": 225.1,
+        "correct": true
+      },
+      {
+        "file": "машина_001.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 149.1,
+        "correct": true
+      },
+      {
+        "file": "машина_002.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 242.0,
+        "correct": true
+      },
+      {
+        "file": "машина_003.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 144.3,
+        "correct": true
+      },
+      {
+        "file": "машина_004.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 166.9,
+        "correct": true
+      },
+      {
+        "file": "машина_005.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 198.4,
+        "correct": true
+      },
+      {
+        "file": "машина_006.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 223.2,
+        "correct": true
+      },
+      {
+        "file": "машина_007.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 182.3,
+        "correct": true
+      },
+      {
+        "file": "машина_008.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 161.5,
+        "correct": true
+      },
+      {
+        "file": "машина_009.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 306.2,
+        "correct": true
+      },
+      {
+        "file": "машина_010.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 289.7,
+        "correct": true
+      },
+      {
+        "file": "машина_011.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 244.5,
+        "correct": true
+      },
+      {
+        "file": "машина_012.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 149.7,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_001.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 251.1,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_002.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 231.3,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_003.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 282.7,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_004.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 251.4,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_005.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 199.8,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_006.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 272.5,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_007.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 236.8,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_009.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 262.4,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_010.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 283.5,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_011.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 263.1,
+        "correct": true
+      },
+      {
+        "file": "приготовить_машину_012.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 270.3,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_001.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 303.0,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_002.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 185.5,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_003.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 225.5,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_004.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 253.8,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_005.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 262.0,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_006.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 277.9,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_007.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 283.2,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_009.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 247.1,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_010.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 292.6,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_011.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 236.4,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_вперёд_012.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 241.1,
+        "correct": true
+      },
+      {
+        "file": "вершина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "вершина",
+        "pred_label": "другие слова",
+        "latency_ms": 167.6,
+        "correct": true
+      },
+      {
+        "file": "вершина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "вершина",
+        "pred_label": "другие слова",
+        "latency_ms": 147.2,
+        "correct": true
+      },
+      {
+        "file": "вперёд_001.wav",
+        "true_label": "другие слова",
+        "transcription": "вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 202.8,
+        "correct": true
+      },
+      {
+        "file": "вперёд_002.wav",
+        "true_label": "другие слова",
+        "transcription": "вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 147.7,
+        "correct": true
+      },
+      {
+        "file": "всё_отставить_001.wav",
+        "true_label": "другие слова",
+        "transcription": "вс оставить",
+        "pred_label": "другие слова",
+        "latency_ms": 239.6,
+        "correct": true
+      },
+      {
+        "file": "всё_отставить_002.wav",
+        "true_label": "другие слова",
+        "transcription": "вс отставить",
+        "pred_label": "другие слова",
+        "latency_ms": 196.0,
+        "correct": true
+      },
+      {
+        "file": "вызови_машину_скорой_001.wav",
+        "true_label": "другие слова",
+        "transcription": "вызови машину скорой",
+        "pred_label": "другие слова",
+        "latency_ms": 281.0,
+        "correct": true
+      },
+      {
+        "file": "вызови_машину_скорой_002.wav",
+        "true_label": "другие слова",
+        "transcription": "вызови машину скорой",
+        "pred_label": "другие слова",
+        "latency_ms": 262.6,
+        "correct": true
+      },
+      {
+        "file": "готовить_001.wav",
+        "true_label": "другие слова",
+        "transcription": "готовить",
+        "pred_label": "другие слова",
+        "latency_ms": 126.4,
+        "correct": true
+      },
+      {
+        "file": "готовить_002.wav",
+        "true_label": "другие слова",
+        "transcription": "готовить",
+        "pred_label": "другие слова",
+        "latency_ms": 143.2,
+        "correct": true
+      },
+      {
+        "file": "готово_001.wav",
+        "true_label": "другие слова",
+        "transcription": "готово",
+        "pred_label": "другие слова",
+        "latency_ms": 279.4,
+        "correct": true
+      },
+      {
+        "file": "готово_002.wav",
+        "true_label": "другие слова",
+        "transcription": "готово",
+        "pred_label": "другие слова",
+        "latency_ms": 201.9,
+        "correct": true
+      },
+      {
+        "file": "готовься_001.wav",
+        "true_label": "другие слова",
+        "transcription": "готовиться",
+        "pred_label": "другие слова",
+        "latency_ms": 169.6,
+        "correct": true
+      },
+      {
+        "file": "готовься_002.wav",
+        "true_label": "другие слова",
+        "transcription": "готовиться",
+        "pred_label": "другие слова",
+        "latency_ms": 142.9,
+        "correct": true
+      },
+      {
+        "file": "да_003.wav",
+        "true_label": "другие слова",
+        "transcription": "да",
+        "pred_label": "другие слова",
+        "latency_ms": 287.5,
+        "correct": true
+      },
+      {
+        "file": "да_004.wav",
+        "true_label": "другие слова",
+        "transcription": "да",
+        "pred_label": "другие слова",
+        "latency_ms": 232.3,
+        "correct": true
+      },
+      {
+        "file": "да_да_всё_понял_001.wav",
+        "true_label": "другие слова",
+        "transcription": "да да вс понятно",
+        "pred_label": "другие слова",
+        "latency_ms": 248.9,
+        "correct": true
+      },
+      {
+        "file": "да_да_всё_понял_002.wav",
+        "true_label": "другие слова",
+        "transcription": "да да все понятно",
+        "pred_label": "другие слова",
+        "latency_ms": 328.7,
+        "correct": true
+      },
+      {
+        "file": "ещё_раз_001.wav",
+        "true_label": "другие слова",
+        "transcription": "еще раз",
+        "pred_label": "другие слова",
+        "latency_ms": 146.3,
+        "correct": true
+      },
+      {
+        "file": "ещё_раз_002.wav",
+        "true_label": "другие слова",
+        "transcription": "еще раз",
+        "pred_label": "другие слова",
+        "latency_ms": 192.6,
+        "correct": true
+      },
+      {
+        "file": "иди_вперёд_по_улице_001.wav",
+        "true_label": "другие слова",
+        "transcription": "иду вперед по улице",
+        "pred_label": "другие слова",
+        "latency_ms": 290.8,
+        "correct": true
+      },
+      {
+        "file": "иди_вперёд_по_улице_002.wav",
+        "true_label": "другие слова",
+        "transcription": "иду вперед по улице",
+        "pred_label": "другие слова",
+        "latency_ms": 218.4,
+        "correct": true
+      },
+      {
+        "file": "корзина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "корзина",
+        "pred_label": "другие слова",
+        "latency_ms": 171.6,
+        "correct": true
+      },
+      {
+        "file": "корзина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "корзина",
+        "pred_label": "другие слова",
+        "latency_ms": 199.4,
+        "correct": true
+      },
+      {
+        "file": "который_час_001.wav",
+        "true_label": "другие слова",
+        "transcription": "который час",
+        "pred_label": "другие слова",
+        "latency_ms": 271.9,
+        "correct": true
+      },
+      {
+        "file": "который_час_002.wav",
+        "true_label": "другие слова",
+        "transcription": "который час",
+        "pred_label": "другие слова",
+        "latency_ms": 224.7,
+        "correct": true
+      },
+      {
+        "file": "купи_новую_машину_001.wav",
+        "true_label": "другие слова",
+        "transcription": "купи новую машину",
+        "pred_label": "другие слова",
+        "latency_ms": 291.3,
+        "correct": true
+      },
+      {
+        "file": "купи_новую_машину_002.wav",
+        "true_label": "другие слова",
+        "transcription": "купи новую машину",
+        "pred_label": "другие слова",
+        "latency_ms": 231.9,
+        "correct": true
+      },
+      {
+        "file": "ладно_давай_001.wav",
+        "true_label": "другие слова",
+        "transcription": "ладно давай",
+        "pred_label": "другие слова",
+        "latency_ms": 201.6,
+        "correct": true
+      },
+      {
+        "file": "ладно_давай_002.wav",
+        "true_label": "другие слова",
+        "transcription": "ладно давай",
+        "pred_label": "другие слова",
+        "latency_ms": 164.9,
+        "correct": true
+      },
+      {
+        "file": "левый_борт_001.wav",
+        "true_label": "другие слова",
+        "transcription": "левый порт",
+        "pred_label": "другие слова",
+        "latency_ms": 193.7,
+        "correct": true
+      },
+      {
+        "file": "левый_борт_002.wav",
+        "true_label": "другие слова",
+        "transcription": "левый борт",
+        "pred_label": "другие слова",
+        "latency_ms": 279.5,
+        "correct": true
+      },
+      {
+        "file": "малина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "малина",
+        "pred_label": "машина",
+        "latency_ms": 132.1,
+        "correct": false
+      },
+      {
+        "file": "малина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "ма",
+        "pred_label": "другие слова",
+        "latency_ms": 132.5,
+        "correct": true
+      },
+      {
+        "file": "малый_003.wav",
+        "true_label": "другие слова",
+        "transcription": "малый",
+        "pred_label": "другие слова",
+        "latency_ms": 147.1,
+        "correct": true
+      },
+      {
+        "file": "малый_004.wav",
+        "true_label": "другие слова",
+        "transcription": "малый",
+        "pred_label": "другие слова",
+        "latency_ms": 194.2,
+        "correct": true
+      },
+      {
+        "file": "малый_вперёд_001.wav",
+        "true_label": "другие слова",
+        "transcription": "малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 230.7,
+        "correct": false
+      },
+      {
+        "file": "малый_вперёд_002.wav",
+        "true_label": "другие слова",
+        "transcription": "малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 274.7,
+        "correct": false
+      },
+      {
+        "file": "малый_назад_001.wav",
+        "true_label": "другие слова",
+        "transcription": "малый назад",
+        "pred_label": "другие слова",
+        "latency_ms": 178.6,
+        "correct": true
+      },
+      {
+        "file": "малый_назад_002.wav",
+        "true_label": "другие слова",
+        "transcription": "малый назад",
+        "pred_label": "другие слова",
+        "latency_ms": 182.0,
+        "correct": true
+      },
+      {
+        "file": "Марина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "марина",
+        "pred_label": "машина",
+        "latency_ms": 203.2,
+        "correct": false
+      },
+      {
+        "file": "Марина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "марина",
+        "pred_label": "машина",
+        "latency_ms": 146.4,
+        "correct": false
+      },
+      {
+        "file": "машинка_001.wav",
+        "true_label": "другие слова",
+        "transcription": "машинка",
+        "pred_label": "машина",
+        "latency_ms": 209.9,
+        "correct": false
+      },
+      {
+        "file": "машинка_002.wav",
+        "true_label": "другие слова",
+        "transcription": "машинка",
+        "pred_label": "машина",
+        "latency_ms": 168.8,
+        "correct": false
+      },
+      {
+        "file": "машину_001.wav",
+        "true_label": "другие слова",
+        "transcription": "машину",
+        "pred_label": "машина",
+        "latency_ms": 206.9,
+        "correct": false
+      },
+      {
+        "file": "машину_002.wav",
+        "true_label": "другие слова",
+        "transcription": "машину",
+        "pred_label": "машина",
+        "latency_ms": 229.5,
+        "correct": false
+      },
+      {
+        "file": "моя_машина_сломалась_001.wav",
+        "true_label": "другие слова",
+        "transcription": "сломалась",
+        "pred_label": "другие слова",
+        "latency_ms": 239.7,
+        "correct": true
+      },
+      {
+        "file": "моя_машина_сломалась_002.wav",
+        "true_label": "другие слова",
+        "transcription": "моя машина сломала",
+        "pred_label": "другие слова",
+        "latency_ms": 288.2,
+        "correct": true
+      },
+      {
+        "file": "на_малой_скорости_001.wav",
+        "true_label": "другие слова",
+        "transcription": "на малой скорости",
+        "pred_label": "другие слова",
+        "latency_ms": 179.5,
+        "correct": true
+      },
+      {
+        "file": "на_малой_скорости_002.wav",
+        "true_label": "другие слова",
+        "transcription": "на малой скорости",
+        "pred_label": "другие слова",
+        "latency_ms": 177.4,
+        "correct": true
+      },
+      {
+        "file": "надо_приготовить_ужин_001.wav",
+        "true_label": "другие слова",
+        "transcription": "надо приготовить ужин",
+        "pred_label": "другие слова",
+        "latency_ms": 315.2,
+        "correct": true
+      },
+      {
+        "file": "надо_приготовить_ужин_002.wav",
+        "true_label": "другие слова",
+        "transcription": "надо приготовить ужин",
+        "pred_label": "другие слова",
+        "latency_ms": 290.4,
+        "correct": true
+      },
+      {
+        "file": "не_сейчас_потом_001.wav",
+        "true_label": "другие слова",
+        "transcription": "не сейчас потом",
+        "pred_label": "другие слова",
+        "latency_ms": 243.2,
+        "correct": true
+      },
+      {
+        "file": "не_сейчас_потом_002.wav",
+        "true_label": "другие слова",
+        "transcription": "не сейчас потом",
+        "pred_label": "другие слова",
+        "latency_ms": 157.4,
+        "correct": true
+      },
+      {
+        "file": "нет_003.wav",
+        "true_label": "другие слова",
+        "transcription": "нет",
+        "pred_label": "другие слова",
+        "latency_ms": 152.6,
+        "correct": true
+      },
+      {
+        "file": "нет_004.wav",
+        "true_label": "другие слова",
+        "transcription": "нет",
+        "pred_label": "другие слова",
+        "latency_ms": 236.3,
+        "correct": true
+      },
+      {
+        "file": "нет_не_то_001.wav",
+        "true_label": "другие слова",
+        "transcription": "нет не то",
+        "pred_label": "другие слова",
+        "latency_ms": 155.2,
+        "correct": true
+      },
+      {
+        "file": "нет_не_то_002.wav",
+        "true_label": "другие слова",
+        "transcription": "нет не то",
+        "pred_label": "другие слова",
+        "latency_ms": 254.8,
+        "correct": true
+      },
+      {
+        "file": "нет_стоп_подожди_001.wav",
+        "true_label": "другие слова",
+        "transcription": "нет стоп подожди",
+        "pred_label": "другие слова",
+        "latency_ms": 197.1,
+        "correct": true
+      },
+      {
+        "file": "нет_стоп_подожди_002.wav",
+        "true_label": "другие слова",
+        "transcription": "нет стоп подожди",
+        "pred_label": "другие слова",
+        "latency_ms": 215.4,
+        "correct": true
+      },
+      {
+        "file": "ноль_один_два_001.wav",
+        "true_label": "другие слова",
+        "transcription": "ноль один два",
+        "pred_label": "другие слова",
+        "latency_ms": 142.7,
+        "correct": true
+      },
+      {
+        "file": "ноль_один_два_002.wav",
+        "true_label": "другие слова",
+        "transcription": "ноль один два",
+        "pred_label": "другие слова",
+        "latency_ms": 267.0,
+        "correct": true
+      },
+      {
+        "file": "открой_дверь_001.wav",
+        "true_label": "другие слова",
+        "transcription": "открой дверь",
+        "pred_label": "другие слова",
+        "latency_ms": 189.8,
+        "correct": true
+      },
+      {
+        "file": "открой_дверь_002.wav",
+        "true_label": "другие слова",
+        "transcription": "открой дверь",
+        "pred_label": "другие слова",
+        "latency_ms": 287.3,
+        "correct": true
+      },
+      {
+        "file": "подготовить_001.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 220.1,
+        "correct": true
+      },
+      {
+        "file": "подготовить_002.wav",
+        "true_label": "другие слова",
+        "transcription": "подготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 212.0,
+        "correct": true
+      },
+      {
+        "file": "подожди_минуту_001.wav",
+        "true_label": "другие слова",
+        "transcription": "подожди минуту",
+        "pred_label": "другие слова",
+        "latency_ms": 181.7,
+        "correct": true
+      },
+      {
+        "file": "подожди_минуту_002.wav",
+        "true_label": "другие слова",
+        "transcription": "подожди минуту",
+        "pred_label": "другие слова",
+        "latency_ms": 290.0,
+        "correct": true
+      },
+      {
+        "file": "пожалуйста_001.wav",
+        "true_label": "другие слова",
+        "transcription": "пожалуйста",
+        "pred_label": "другие слова",
+        "latency_ms": 143.3,
+        "correct": true
+      },
+      {
+        "file": "пожалуйста_002.wav",
+        "true_label": "другие слова",
+        "transcription": "пожалуй",
+        "pred_label": "другие слова",
+        "latency_ms": 205.0,
+        "correct": true
+      },
+      {
+        "file": "полный_вперёд_001.wav",
+        "true_label": "другие слова",
+        "transcription": "полный вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 164.0,
+        "correct": true
+      },
+      {
+        "file": "полный_вперёд_002.wav",
+        "true_label": "другие слова",
+        "transcription": "полный вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 286.3,
+        "correct": true
+      },
+      {
+        "file": "полный_назад_001.wav",
+        "true_label": "другие слова",
+        "transcription": "полный назад",
+        "pred_label": "другие слова",
+        "latency_ms": 230.6,
+        "correct": true
+      },
+      {
+        "file": "полный_назад_002.wav",
+        "true_label": "другие слова",
+        "transcription": "полный назад",
+        "pred_label": "другие слова",
+        "latency_ms": 227.3,
+        "correct": true
+      },
+      {
+        "file": "понятно_001.wav",
+        "true_label": "другие слова",
+        "transcription": "понятно",
+        "pred_label": "другие слова",
+        "latency_ms": 195.4,
+        "correct": true
+      },
+      {
+        "file": "понятно_002.wav",
+        "true_label": "другие слова",
+        "transcription": "понятно",
+        "pred_label": "другие слова",
+        "latency_ms": 208.0,
+        "correct": true
+      },
+      {
+        "file": "поставь_машину_в_гараж_001.wav",
+        "true_label": "другие слова",
+        "transcription": "поставь машину в гараж",
+        "pred_label": "другие слова",
+        "latency_ms": 260.7,
+        "correct": true
+      },
+      {
+        "file": "поставь_машину_в_гараж_002.wav",
+        "true_label": "другие слова",
+        "transcription": "поставь машину в гараж",
+        "pred_label": "другие слова",
+        "latency_ms": 174.5,
+        "correct": true
+      },
+      {
+        "file": "правый_борт_001.wav",
+        "true_label": "другие слова",
+        "transcription": "правый борт",
+        "pred_label": "другие слова",
+        "latency_ms": 202.4,
+        "correct": true
+      },
+      {
+        "file": "правый_борт_002.wav",
+        "true_label": "другие слова",
+        "transcription": "правый борт",
+        "pred_label": "другие слова",
+        "latency_ms": 187.2,
+        "correct": true
+      },
+      {
+        "file": "приготовить_003.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 180.0,
+        "correct": true
+      },
+      {
+        "file": "приготовить_004.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 161.0,
+        "correct": true
+      },
+      {
+        "file": "приготовить_завтрак_не_успею_001.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить завтрак не успел",
+        "pred_label": "другие слова",
+        "latency_ms": 210.1,
+        "correct": true
+      },
+      {
+        "file": "приготовить_завтрак_не_успею_002.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить завтрак не успеваем",
+        "pred_label": "другие слова",
+        "latency_ms": 324.2,
+        "correct": true
+      },
+      {
+        "file": "приготовить_кашу_001.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить кашу",
+        "pred_label": "приготовить машину",
+        "latency_ms": 241.9,
+        "correct": false
+      },
+      {
+        "file": "приготовить_кашу_002.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить кашу",
+        "pred_label": "приготовить машину",
+        "latency_ms": 250.4,
+        "correct": false
+      },
+      {
+        "file": "приготовить_ужин_001.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить ужин",
+        "pred_label": "приготовить машину",
+        "latency_ms": 226.6,
+        "correct": false
+      },
+      {
+        "file": "приготовить_ужин_002.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить ужин",
+        "pred_label": "приготовить машину",
+        "latency_ms": 156.9,
+        "correct": false
+      },
+      {
+        "file": "приготовиться_001.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 300.3,
+        "correct": true
+      },
+      {
+        "file": "приготовиться_002.wav",
+        "true_label": "другие слова",
+        "transcription": "подготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 175.5,
+        "correct": true
+      },
+      {
+        "file": "пружина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "пружина",
+        "pred_label": "другие слова",
+        "latency_ms": 169.0,
+        "correct": true
+      },
+      {
+        "file": "пружина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "пружина",
+        "pred_label": "другие слова",
+        "latency_ms": 151.8,
+        "correct": true
+      },
+      {
+        "file": "раз_два_три_001.wav",
+        "true_label": "другие слова",
+        "transcription": "раз два три",
+        "pred_label": "другие слова",
+        "latency_ms": 200.3,
+        "correct": true
+      },
+      {
+        "file": "раз_два_три_002.wav",
+        "true_label": "другие слова",
+        "transcription": "раз два три",
+        "pred_label": "другие слова",
+        "latency_ms": 192.2,
+        "correct": true
+      },
+      {
+        "file": "резина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "резина",
+        "pred_label": "другие слова",
+        "latency_ms": 147.8,
+        "correct": true
+      },
+      {
+        "file": "резина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "резина",
+        "pred_label": "другие слова",
+        "latency_ms": 134.5,
+        "correct": true
+      },
+      {
+        "file": "самый_005.wav",
+        "true_label": "другие слова",
+        "transcription": "самый",
+        "pred_label": "другие слова",
+        "latency_ms": 168.3,
+        "correct": true
+      },
+      {
+        "file": "самый_006.wav",
+        "true_label": "другие слова",
+        "transcription": "самый",
+        "pred_label": "другие слова",
+        "latency_ms": 210.5,
+        "correct": true
+      },
+      {
+        "file": "самый_большой_001.wav",
+        "true_label": "другие слова",
+        "transcription": "самый большой",
+        "pred_label": "другие слова",
+        "latency_ms": 279.0,
+        "correct": true
+      },
+      {
+        "file": "самый_большой_002.wav",
+        "true_label": "другие слова",
+        "transcription": "самый большой",
+        "pred_label": "другие слова",
+        "latency_ms": 207.3,
+        "correct": true
+      },
+      {
+        "file": "самый_быстрый_001.wav",
+        "true_label": "другие слова",
+        "transcription": "самый быстрый",
+        "pred_label": "другие слова",
+        "latency_ms": 268.8,
+        "correct": true
+      },
+      {
+        "file": "самый_быстрый_002.wav",
+        "true_label": "другие слова",
+        "transcription": "самый быстрый",
+        "pred_label": "другие слова",
+        "latency_ms": 217.9,
+        "correct": true
+      },
+      {
+        "file": "самый_маленький_003.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый",
+        "pred_label": "другие слова",
+        "latency_ms": 206.6,
+        "correct": true
+      },
+      {
+        "file": "самый_маленький_004.wav",
+        "true_label": "другие слова",
+        "transcription": "самый маленький",
+        "pred_label": "другие слова",
+        "latency_ms": 182.8,
+        "correct": true
+      },
+      {
+        "file": "самый_маленький_из_всех_001.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый из всех",
+        "pred_label": "другие слова",
+        "latency_ms": 314.8,
+        "correct": true
+      },
+      {
+        "file": "самый_маленький_из_всех_002.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый из всех",
+        "pred_label": "другие слова",
+        "latency_ms": 232.4,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_001.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый",
+        "pred_label": "другие слова",
+        "latency_ms": 229.9,
+        "correct": true
+      },
+      {
+        "file": "самый_малый_002.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый",
+        "pred_label": "другие слова",
+        "latency_ms": 147.5,
+        "correct": true
+      },
+      {
+        "file": "семь_восемь_девять_десять_001.wav",
+        "true_label": "другие слова",
+        "transcription": "семь восемь десять десять",
+        "pred_label": "другие слова",
+        "latency_ms": 233.2,
+        "correct": true
+      },
+      {
+        "file": "семь_восемь_девять_десять_002.wav",
+        "true_label": "другие слова",
+        "transcription": "семь восемь девять десять",
+        "pred_label": "другие слова",
+        "latency_ms": 264.1,
+        "correct": true
+      },
+      {
+        "file": "смотри_вперёд_001.wav",
+        "true_label": "другие слова",
+        "transcription": "сми",
+        "pred_label": "другие слова",
+        "latency_ms": 242.7,
+        "correct": true
+      },
+      {
+        "file": "смотри_вперёд_002.wav",
+        "true_label": "другие слова",
+        "transcription": "смотри вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 164.0,
+        "correct": true
+      },
+      {
+        "file": "спасибо_001.wav",
+        "true_label": "другие слова",
+        "transcription": "спасибо",
+        "pred_label": "другие слова",
+        "latency_ms": 138.9,
+        "correct": true
+      },
+      {
+        "file": "спасибо_002.wav",
+        "true_label": "другие слова",
+        "transcription": "",
+        "pred_label": "другие слова",
+        "latency_ms": 150.9,
+        "correct": true
+      },
+      {
+        "file": "средний_вперёд_001.wav",
+        "true_label": "другие слова",
+        "transcription": "средний вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 194.0,
+        "correct": true
+      },
+      {
+        "file": "средний_вперёд_002.wav",
+        "true_label": "другие слова",
+        "transcription": "средний вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 288.7,
+        "correct": true
+      },
+      {
+        "file": "стоп_003.wav",
+        "true_label": "другие слова",
+        "transcription": "стоп",
+        "pred_label": "другие слова",
+        "latency_ms": 200.9,
+        "correct": true
+      },
+      {
+        "file": "стоп_004.wav",
+        "true_label": "другие слова",
+        "transcription": "стоп",
+        "pred_label": "другие слова",
+        "latency_ms": 171.5,
+        "correct": true
+      },
+      {
+        "file": "стоп_машина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "стоп машина",
+        "pred_label": "другие слова",
+        "latency_ms": 161.0,
+        "correct": true
+      },
+      {
+        "file": "стоп_машина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "стоп машина",
+        "pred_label": "другие слова",
+        "latency_ms": 193.3,
+        "correct": true
+      },
+      {
+        "file": "тест_проверка_001.wav",
+        "true_label": "другие слова",
+        "transcription": "тест проверка",
+        "pred_label": "другие слова",
+        "latency_ms": 189.6,
+        "correct": true
+      },
+      {
+        "file": "тест_проверка_002.wav",
+        "true_label": "другие слова",
+        "transcription": "тест проверка",
+        "pred_label": "другие слова",
+        "latency_ms": 172.0,
+        "correct": true
+      },
+      {
+        "file": "тихо_вперёд_малый_001.wav",
+        "true_label": "другие слова",
+        "transcription": "вперед малый",
+        "pred_label": "другие слова",
+        "latency_ms": 279.8,
+        "correct": true
+      },
+      {
+        "file": "тихо_вперёд_малый_002.wav",
+        "true_label": "другие слова",
+        "transcription": "вперед малый",
+        "pred_label": "другие слова",
+        "latency_ms": 213.3,
+        "correct": true
+      },
+      {
+        "file": "тихо_приготовить_001.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 157.1,
+        "correct": true
+      },
+      {
+        "file": "тихо_приготовить_002.wav",
+        "true_label": "другие слова",
+        "transcription": "приготовить",
+        "pred_label": "другие слова",
+        "latency_ms": 251.6,
+        "correct": true
+      },
+      {
+        "file": "тихо_самый_малый_001.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый",
+        "pred_label": "другие слова",
+        "latency_ms": 270.8,
+        "correct": true
+      },
+      {
+        "file": "тихо_самый_малый_002.wav",
+        "true_label": "другие слова",
+        "transcription": "самый малый",
+        "pred_label": "другие слова",
+        "latency_ms": 163.3,
+        "correct": true
+      },
+      {
+        "file": "товсь_001.wav",
+        "true_label": "другие слова",
+        "transcription": "тофс",
+        "pred_label": "другие слова",
+        "latency_ms": 205.6,
+        "correct": true
+      },
+      {
+        "file": "товсь_002.wav",
+        "true_label": "другие слова",
+        "transcription": "то",
+        "pred_label": "другие слова",
+        "latency_ms": 146.4,
+        "correct": true
+      },
+      {
+        "file": "хорошо_001.wav",
+        "true_label": "другие слова",
+        "transcription": "хорошо",
+        "pred_label": "другие слова",
+        "latency_ms": 177.9,
+        "correct": true
+      },
+      {
+        "file": "хорошо_002.wav",
+        "true_label": "другие слова",
+        "transcription": "хорошо",
+        "pred_label": "другие слова",
+        "latency_ms": 153.9,
+        "correct": true
+      },
+      {
+        "file": "четыре_пять_шесть_001.wav",
+        "true_label": "другие слова",
+        "transcription": "четыре пять шесть",
+        "pred_label": "другие слова",
+        "latency_ms": 160.9,
+        "correct": true
+      },
+      {
+        "file": "четыре_пять_шесть_002.wav",
+        "true_label": "другие слова",
+        "transcription": "четыре пять шесть",
+        "pred_label": "другие слова",
+        "latency_ms": 288.7,
+        "correct": true
+      },
+      {
+        "file": "э_э_э_подожди_001.wav",
+        "true_label": "другие слова",
+        "transcription": "э подожди",
+        "pred_label": "другие слова",
+        "latency_ms": 196.9,
+        "correct": true
+      },
+      {
+        "file": "э_э_э_подожди_002.wav",
+        "true_label": "другие слова",
+        "transcription": "э подожди",
+        "pred_label": "другие слова",
+        "latency_ms": 191.4,
+        "correct": true
+      },
+      {
+        "file": "это_самый_лучший_вариант_001.wav",
+        "true_label": "другие слова",
+        "transcription": "это самый лучший вариант",
+        "pred_label": "другие слова",
+        "latency_ms": 289.4,
+        "correct": true
+      },
+      {
+        "file": "это_самый_лучший_вариант_002.wav",
+        "true_label": "другие слова",
+        "transcription": "это самый лучший вариант",
+        "pred_label": "другие слова",
+        "latency_ms": 283.3,
+        "correct": true
+      },
+      {
+        "file": "это_твоя_машина_001.wav",
+        "true_label": "другие слова",
+        "transcription": "это твоя машина",
+        "pred_label": "другие слова",
+        "latency_ms": 230.7,
+        "correct": true
+      },
+      {
+        "file": "это_твоя_машина_002.wav",
+        "true_label": "другие слова",
+        "transcription": "это твоя машина",
+        "pred_label": "другие слова",
+        "latency_ms": 221.7,
+        "correct": true
+      },
+      {
+        "file": "я_уже_приготовил_001.wav",
+        "true_label": "другие слова",
+        "transcription": "я уже приготовил",
+        "pred_label": "другие слова",
+        "latency_ms": 250.7,
+        "correct": true
+      },
+      {
+        "file": "я_уже_приготовил_002.wav",
+        "true_label": "другие слова",
+        "transcription": "я уже приготовил",
+        "pred_label": "другие слова",
+        "latency_ms": 183.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-10.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 232.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-11.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 244.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-12.wav",
+        "true_label": "приготовить машину",
+        "transcription": "риготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 314.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-13.wav",
+        "true_label": "приготовить машину",
+        "transcription": "прилетавить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 189.6,
+        "correct": true
+      },
+      {
+        "file": "untitled-14.wav",
+        "true_label": "приготовить машину",
+        "transcription": "",
+        "pred_label": "другие слова",
+        "latency_ms": 214.6,
+        "correct": false
+      },
+      {
+        "file": "untitled-15.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 198.6,
+        "correct": true
+      },
+      {
+        "file": "untitled-16.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 255.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-17.wav",
+        "true_label": "приготовить машину",
+        "transcription": "готовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 248.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить шин",
+        "pred_label": "приготовить машину",
+        "latency_ms": 265.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 261.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 339.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 239.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-6.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 275.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-7.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 184.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-8.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 271.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-9.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить бышен",
+        "pred_label": "приготовить машину",
+        "latency_ms": 234.8,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 220.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-10.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 285.3,
+        "correct": true
+      },
+      {
+        "file": "untitled-11.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 233.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-12.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "саммал вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 299.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-13.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 215.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-14.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 237.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-15.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 255.3,
+        "correct": true
+      },
+      {
+        "file": "untitled-16.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "сам мало вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 218.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-17.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "саммал вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 220.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-18.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 215.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 293.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 304.6,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 347.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 303.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-6.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 240.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-7.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 312.8,
+        "correct": true
+      },
+      {
+        "file": "untitled-8.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый манут вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 168.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-9.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "санмал вперед",
+        "pred_label": "другие слова",
+        "latency_ms": 285.2,
+        "correct": false
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самма вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 274.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-10.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 276.6,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 272.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 264.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 230.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 354.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-6.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 287.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-7.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 275.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-8.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 246.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-9.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 222.5,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 273.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 339.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 319.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 360.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 327.3,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 344.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 263.8,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 336.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 364.6,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 294.6,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 341.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-10.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 257.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-11.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 266.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-12.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 253.3,
+        "correct": true
+      },
+      {
+        "file": "untitled-13.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 269.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-14.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 284.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-15.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 276.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-16.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 288.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-17.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 288.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 266.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 214.8,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 259.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 247.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-6.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 239.2,
+        "correct": true
+      },
+      {
+        "file": "untitled-7.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 220.6,
+        "correct": true
+      },
+      {
+        "file": "untitled-8.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 193.8,
+        "correct": true
+      },
+      {
+        "file": "untitled-9.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 318.6,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "машина",
+        "transcription": "машина",
+        "pred_label": "машина",
+        "latency_ms": 275.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-10.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 282.8,
+        "correct": true
+      },
+      {
+        "file": "untitled-11.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 287.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-12.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 287.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-13.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 189.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-14.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 280.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 294.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 277.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 283.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 275.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-6.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 276.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-7.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 296.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-8.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 278.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-9.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 292.2,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "приготовить машину",
+        "transcription": "приготовить машину",
+        "pred_label": "приготовить машину",
+        "latency_ms": 325.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-10.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 280.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-11.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 284.3,
+        "correct": true
+      },
+      {
+        "file": "untitled-12.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 227.7,
+        "correct": true
+      },
+      {
+        "file": "untitled-13.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 281.8,
+        "correct": true
+      },
+      {
+        "file": "untitled-14.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 195.5,
+        "correct": true
+      },
+      {
+        "file": "untitled-15.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 264.3,
+        "correct": true
+      },
+      {
+        "file": "untitled-2.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 343.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-3.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 220.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-4.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 247.1,
+        "correct": true
+      },
+      {
+        "file": "untitled-5.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 281.9,
+        "correct": true
+      },
+      {
+        "file": "untitled-6.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 295.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-7.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 276.4,
+        "correct": true
+      },
+      {
+        "file": "untitled-8.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 258.0,
+        "correct": true
+      },
+      {
+        "file": "untitled-9.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 263.3,
+        "correct": true
+      },
+      {
+        "file": "untitled.wav",
+        "true_label": "самый малый вперед",
+        "transcription": "самый малый вперед",
+        "pred_label": "самый малый вперед",
+        "latency_ms": 291.4,
+        "correct": true
+      }
+    ]
+  }
+}

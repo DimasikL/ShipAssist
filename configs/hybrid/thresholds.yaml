@@ -1,0 +1,75 @@
+# configs/hybrid/thresholds.yaml
+#
+# Hybrid C+ engine — rejection thresholds and slot-fill configuration.
+#
+# These values are tuned separately from model artefacts so you can
+# recalibrate without re-exporting weights.
+#
+# Calibration script: python scripts/utils/main_calib_live_outdet_run.py
+# (sweep cosine threshold and Mahalanobis percentile jointly on validation set)
+
+# ── Outlier Gate ──────────────────────────────────────────────────────────────
+outlier_gate:
+  # Distance metric: "mahalanobis", "cosine", "l2", or "ensemble".
+  # "ensemble" = EnsembleOutlierGate (Mahalanobis + cosine + L2, recommended).
+  # Updated 2026-05-24: switched to ensemble gate trained on run_2026-04-30 embeddings.
+  method: "ensemble"
+
+  # The threshold is set to this percentile of training-set distances during fitting.
+  # Raise → accept more (fewer false negatives); lower → reject more (fewer false positives).
+  # Maritime recommendation: 95th percentile to avoid spurious helm commands.
+  percentile: 95.0
+
+  # Hard fallback used when the gate has not been calibrated yet (artefact missing).
+  # Conservative — accepts almost nothing until a real model is fitted.
+  fallback_threshold: 8.0
+
+  # Epsilon added to the covariance diagonal before inversion.
+  # Required for stability when embedding_dim (1024) >> n_samples.
+  regularization_eps: 0.0001
+
+  # Set to false to disable the gate entirely (for ablation experiments).
+  enabled: true
+
+  # ── Online-SNR adaptive threshold (§2.3) ────────────────────────────────────
+  # Raises τ when SNR < snr_ref_db, protecting against high-noise FPs.
+  # Calibrate beta on the validation set; start with ablation at β ∈ {0.05..0.20}.
+  snr_adaptive:
+    enabled: false          # flip to true after beta calibration
+    snr_ref_db: 12.0        # dB — gate tightens below this level
+    beta: 0.15              # sensitivity coefficient (calibrate)
+
+# ── Centroid Search ───────────────────────────────────────────────────────────
+centroid_search:
+  # Global minimum cosine similarity to accept a prediction.
+  # Inputs where all centroids score below this are returned as label="".
+  # Start at 0.75 and increase if you see too many false positives on noise.
+  min_cosine_similarity: 0.75
+
+  # Per-phrase overrides (optional).
+  # Keys must be exact label strings as registered in centroid_labels.json.
+  # Higher value = stricter acceptance for that specific phrase.
+  per_label_thresholds:
+    "машина": 0.80
+    "приготовить машину": 0.82
+    "самый малый вперед": 0.78
+
+# ── Number Regressor ─────────────────────────────────────────────────────────
+number_regressor:
+  # Exact label strings that trigger slot-filling.
+  # Must match labels registered in centroid_labels.json.
+  # "УГОЛ" is the placeholder string in the label; it is replaced by the
+  # predicted integer in the full_label output field.
+  slot_intents:
+    - "поворот влево на УГОЛ"
+    - "поворот вправо на УГОЛ"
+    - "курс УГОЛ градусов"
+    - "скорость УГОЛ узлов"
+
+  # Value clipping bounds per slot intent.
+  # Format: [min_value, max_value]
+  bounds:
+    "поворот влево на УГОЛ":  [30.0, 90.0]
+    "поворот вправо на УГОЛ": [30.0, 90.0]
+    "курс УГОЛ градусов":     [1.0, 360.0]
+    "скорость УГОЛ узлов":    [0.0, 30.0]

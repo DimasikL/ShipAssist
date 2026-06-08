@@ -1,0 +1,81 @@
+# configs/hybrid/model.yaml
+#
+# Hybrid C+ engine — model artefact paths and embedder settings.
+# All path values are RELATIVE to the project root (resolved by HybridConfig.from_yaml).
+#
+# !! Do NOT hardcode absolute paths here. !!
+# !! This file is read-only for core/hybrid/config.py — never modified at runtime. !!
+
+# ── Artefact paths ─────────────────────────────────────────────────────────────
+paths:
+  # Numpy array of shape (N_labels, D) — one L2-normalised centroid per phrase.
+  # Created by: python scripts/hybrid/build_centroids.py
+  centroids: "artifacts/hybrid/centroids.npy"
+
+  # JSON list of N_labels strings, in the same row-order as centroids.npy.
+  # Created by: python scripts/hybrid/build_centroids.py
+  centroid_labels: "artifacts/hybrid/centroid_labels.json"
+
+  # Pickled OutlierGate (fitted).
+  # Created by: python scripts/hybrid/train_outlier_gate.py
+  outlier_gate: "artifacts/hybrid/outlier_gate.pkl"
+
+  # Directory containing one <intent_key>.pkl per slot intent.
+  # Keys use underscores in place of spaces, e.g. "курс_УГОЛ_градусов.pkl"
+  # Created by: python scripts/hybrid/train_regressor.py
+  number_regressors_dir: "artifacts/hybrid/regressors"
+
+# ── Audio parameters ───────────────────────────────────────────────────────────
+# Must match the ONNX model that provides the embeddings.
+sample_rate: 16000
+win_samples: 48000   # 3 seconds at 16 kHz — must match the training window of the ONNX bundle
+
+# ── Embedding source ───────────────────────────────────────────────────────────
+embedder:
+  # If true (recommended): reuse embedding from OnnxEngine outputs[1].
+  # Zero extra latency — the embedding is a free by-product of the existing inference.
+  # If false: run a standalone WTVEmbedder (full HF forward pass, ~80ms extra).
+  use_onnx_embeddings: true
+
+  # Path to the ONNX bundle (directory containing onnx_config.json).
+  # Only used when use_onnx_embeddings is true.
+  # run_2026-04-30: win=3s, embedding_dim=256, trained on balanced 4-class dataset.
+  # !! win_samples above must match onnx_config.json["win_samples"] of this bundle !!
+  onnx_model_dir: "onnx_model/run_2026-04-30"
+
+  # HuggingFace model identifier for the standalone WTVEmbedder.
+  # Only used when use_onnx_embeddings is false.
+  hf_model_name: "jonatasgrosman/wav2vec2-large-xlsr-53-russian"
+
+# ── CTC Digit Decoder (Variant B slot-fill) ────────────────────────────────────
+#
+# Replaces / augments NumberRegressor for open-range numeric slots.
+# When enabled and the ONNX bundle exposes projected_frames (has_frames=true),
+# the pipeline tries CTC decoding first; falls back to NumberRegressor if
+# CTC returns None or confidence < ctc_min_confidence.
+#
+# Train the head with:
+#   python scripts/hybrid/train_ctc_head.py --csv artifacts/data/digits.csv ...
+#
+# !! frame_dim is inferred automatically from onnx_config.json["frame_dim"]
+# !! at engine load time — do NOT hardcode it here unless you need to override.
+ctc_decoder:
+  # Set to false to disable CTC entirely and keep Variant A (MLP regressor) only.
+  enabled: true
+
+  # Path to the trained CTC head checkpoint (.pt state dict).
+  # Created by: python scripts/hybrid/train_ctc_head.py
+  head_path: "artifacts/hybrid/ctc_digit_head.pt"
+
+  # Slot intents that benefit from CTC decoding (open digit-by-digit range).
+  # Intents NOT listed here always use the MLP regressor (Variant A).
+  # Recommended: use CTC for wide-range intents (курс, скорость);
+  # keep regressor for narrow bounded ones (поворот) where TTS data is sparse.
+  ctc_intents:
+    - "курс УГОЛ градусов"
+    - "скорость УГОЛ узлов"
+
+  # Minimum CTC confidence score to trust a CTC decode.
+  # Below this threshold, fall back to the MLP NumberRegressor.
+  # Range: 0.0–1.0  (mean max-token probability over non-blank frames).
+  min_confidence: 0.60

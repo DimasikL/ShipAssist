@@ -1,0 +1,114 @@
+# configs/routing.yaml
+#
+# SmartRouter — routing rules and confidence thresholds.
+#
+# Loaded by: core.router.RoutingConfig.from_yaml("configs/routing.yaml")
+#
+# This file is intentionally separate from base.yaml so routing rules can
+# be updated without touching the main application config. If you prefer to
+# embed these settings in base.yaml, see the diff at the bottom of this file.
+#
+# !! Zero hardcoded paths. !! All thresholds are tunable without retraining.
+# !! After changing thresholds, run: python scripts/router_demo.py --mode bench
+
+# ── Known-phrase ownership (ONNX engine) ──────────────────────────────────────
+#
+# These labels are "owned" by the ONNX LoRA-fine-tuned engine.
+# When ONNX fires on one of these with confidence ≥ onnx_confidence_threshold,
+# the router returns immediately WITHOUT calling the hybrid engine (~30–80 ms
+# saved per call on the happy path).
+#
+# Add every label that appears in onnx_config.json → "labels" here.
+known_phrases:
+  - "машина"
+  - "приготовить машину"
+  - "самый малый вперед"
+  - "полный вперед"
+  # Add additional fine-tuned phrases here as your ONNX model grows:
+  # - "стоп машина"
+  # - "малый вперед"
+
+# ── Slot-intent ownership (Hybrid engine) ────────────────────────────────────
+#
+# These labels contain an open numeric slot (УГОЛ, СКОРОСТЬ, etc.).
+# The ONNX engine cannot resolve numbers — these ALWAYS route to hybrid.
+# Must match slot_intents in configs/hybrid/thresholds.yaml exactly.
+number_slot_intents:
+  - "поворот влево на УГОЛ"
+  - "поворот вправо на УГОЛ"
+  - "курс УГОЛ градусов"
+  - "скорость УГОЛ узлов"
+
+# ── Confidence thresholds ─────────────────────────────────────────────────────
+#
+# onnx_confidence_threshold:
+#   Minimum ONNX softmax probability to trust a known-phrase prediction.
+#   Below this, the router does NOT short-circuit and calls hybrid as well.
+#   Calibration: run scripts/router_demo.py --mode bench on labelled data.
+#   Current target: FPR < 1% on noise audio with known phrases.
+onnx_confidence_threshold: 0.85
+
+# hybrid_confidence_threshold:
+#   Minimum MAPPED cosine confidence to accept a hybrid prediction in the
+#   tie-break stage. Uses the cosine → [0,1] mapping defined below.
+#   0.75 mapped ≡ cosine ≈ 0.875 with default shift=0.5, factor=2.0.
+hybrid_confidence_threshold: 0.75
+
+# ── Cosine → softmax scale alignment ─────────────────────────────────────────
+#
+# ONNX produces softmax ∈ [0, 1]. Hybrid produces cosine ∈ [-1, 1].
+# A linear mapping makes them comparable for tie-breaking:
+#
+#   mapped = clip(0, 1, (cosine − cosine_shift) × cosine_factor)
+#
+# Intuition (Wav2Vec2 embeddings, Russian speech):
+#   cosine  0.50  →  0.00   (random similarity)
+#   cosine  0.75  →  0.50   (moderate phonetic match)
+#   cosine  1.00  →  1.00   (identical embedding)
+#
+# To recalibrate: collect 200 labelled clips, run both engines, plot
+# cosine vs softmax distributions, and adjust shift/factor to align medians.
+cosine_shift: 0.50
+cosine_factor: 2.0
+
+# ── Routing behaviour flags ───────────────────────────────────────────────────
+#
+# run_both_always:
+#   false (default) — ONNX fast-path: if ONNX fires confidently on a known
+#                     phrase, hybrid is NOT called. Minimises latency.
+#   true            — Both engines always run. Use for shadow-mode A/B logging
+#                     when you want to compare outputs without changing routing.
+run_both_always: false
+
+# prefer_onnx_for_known:
+#   true (default)  — ONNX is authoritative for known_phrases.
+#   false           — Hybrid can override ONNX even for known phrases.
+#                     Use when migrating and evaluating hybrid accuracy.
+prefer_onnx_for_known: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Optional: embed in base.yaml instead of this standalone file
+# ─────────────────────────────────────────────────────────────────────────────
+# To fold these settings into configs/base.yaml, append the following block
+# (do NOT modify the file directly — add this after the existing content):
+#
+#   routing:
+#     known_phrases:
+#       - "машина"
+#       - "приготовить машину"
+#       - "самый малый вперед"
+#       - "полный вперед"
+#     number_slot_intents:
+#       - "поворот влево на УГОЛ"
+#       - "поворот вправо на УГОЛ"
+#       - "курс УГОЛ градусов"
+#       - "скорость УГОЛ узлов"
+#     onnx_confidence_threshold: 0.85
+#     hybrid_confidence_threshold: 0.75
+#     cosine_shift: 0.50
+#     cosine_factor: 2.0
+#     run_both_always: false
+#     prefer_onnx_for_known: true
+#
+# Then load with: RoutingConfig.from_yaml("configs/base.yaml")
+# (the loader handles both flat and nested "routing: {...}" formats)

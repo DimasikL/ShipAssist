@@ -1,0 +1,14 @@
+audio:
+  sample_rate: 16000
+  channels: 1
+  window_seconds: 1.0
+  stride_seconds: 0.5
+  threshold_db: -50.0
+  max_duration: 3.0
+  target_lufs: -20.0
+
+inference:
+  buffer_seconds: 6.0
+  overlap: 0.5
+  realtime_threshold: 0.6
+

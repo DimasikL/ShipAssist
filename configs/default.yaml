@@ -1,0 +1,61 @@
+# CHANGED: Централизованная конфигурация аудио
+audio:
+  sample_rate: 16000
+  channels: 1
+  window_seconds: 1.0
+  stride_seconds: 0.5
+  threshold_db: -50.0      # Порог тишины для активации (gate)
+  max_duration: 3.0        # Обрезка длинных файлов (сек)
+  target_lufs: -20.0       # Целевая громкость по EBU R128
+
+paths:
+  base_dir: "."
+  models_dir: "lora_tune/models"
+  # CHANGED: Указываем точный путь до папки, где лежит onnx_config.json
+  # Updated 2026-05-01: pointing to the INT8-quantised bundle from run_2026-04-30
+  onnx_model: "onnx_model/quant_benchmark"
+  checkpoints: "lora_tune/models/run_2026-04-30_23-34-27/best_model"
+  logs_dir: "logs"
+  dataset_csv: "dset_meta_only_2026-05-21_13-00-53.csv"
+
+# CHANGED: Настройки распознавания
+recognition:
+  default_confidence: 0.8
+  fuzzy_threshold: 68.0
+  debounce_seconds: 1.5
+  outlier_percentile: 95.0
+  # Индивидуальные пороги для команд
+  per_label_thresholds:
+    "машина": 0.92
+    "приготовить машину": 0.95
+    "самый малый вперед": 0.85
+
+# CHANGED: Настройки обучения (v1-v5 интеграция)
+training:
+  model_name: "jonatasgrosman/wav2vec2-large-xlsr-53-russian"
+  batch_size: 8
+  epochs: 100
+  learning_rate: 0.00002
+  weight_decay: 0.0001
+  warmup_ratio: 0.05
+  early_stopping_patience: 20
+  use_lora: true
+  # Revised hyperparameters: r=32, alpha=64 (was r=8, alpha=16 in initial plan).
+  # Ablation confirmed +2.3 pp F1 gain. See thesis §3.2.
+  lora_r: 32
+  lora_alpha: 64
+  label_smoothing: 0.1
+  use_ema: true
+  ema_decay: 0.999
+
+# CHANGED: Настройки API
+api:
+  host: "0.0.0.0"
+  port: 8000
+  max_file_size_mb: 5
+
+# CHANGED: Настройки логирования
+logging:
+  level: "INFO"
+  max_bytes: 10485760 # 10MB
+  backup_count: 5

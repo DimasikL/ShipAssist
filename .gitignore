@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Models & heavy binary artifacts (use DVC or release assets instead)
+artifacts/models/
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.bin
+*.npy
+*.npz
+*.h5
+
+# Audio & raw datasets
+artifacts/demand_raw/
+artifacts/demand_mixed/
+artifacts/demand_noise/
+data_mozilla/
+clf_dset/
+ESC-50/
+America/
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+
+# Logs (keep structure, ignore content)
+logs/*.log
+logs/*.log.*
+logs/*.csv
+src/logs/
+tests/logs/
+
+# Personal documents (CV, cover letters, thesis presentations)
+CV_*.docx
+CV_*.pdf
+MotivationLetter_*.docx
+MotivationLetter_*.pdf
+project_description_*.docx
+project_description_*.pdf
+*_VKR_*.pptx
+*_ВКР_*.pptx
+Защита_*.pptx
+JUNIOR*.pdf
+JUNIOR*.docx
+
+# IDE & OS
+.idea/
+.vscode/
+*.swp
+*.swo
+~$*
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Node (not part of this project)
+node_modules/
+package-lock.json
+
+# Temporary & scratch
+*.tmp
+*.bak
+fix_*.py
+prompts_*/
+vkr_*/
+unpacked_*/
+photo_*/
+memory/
+MEMORY.md
