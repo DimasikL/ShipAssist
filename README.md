@@ -253,9 +253,7 @@ Hyperparameters, Optuna results, and benchmark outputs are committed as JSON und
 | Document | Purpose |
 |---|---|
 | [`docs/architecture.md`](docs/architecture.md) | Full data-flow, ONNX vs Torch comparison, config-driven design, module dependency graph |
-| [`docs/audit_lora_pipeline.md`](docs/audit_lora_pipeline.md) | LoRA pipeline audit: critical bugs, evaluation gaps, prioritised action plan |
 | [`RUNBOOK.md`](RUNBOOK.md) | Step-by-step operational guide: environment → config → benchmark → API → training |
-| [`CLAUDE.md`](CLAUDE.md) | Development guidelines: canonical structure, code quality, commit standards |
 
 ---
 
